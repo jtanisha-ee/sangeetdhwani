@@ -1,0 +1,14 @@
+
+To generate index.html dynamically:
+
+# copy new images into images/ folder
+# download images from AWS s3://sangeeetdhwani.org/images 
+# the images are not in git
+python genslideshow.py
+mv index.html index.html.prev
+mv genshow.html index.html
+
+# git bash commands
+git add index.html index.html.prev
+git add images/<imagexxx>.png     # etc....
+git commit -m "new images" .
