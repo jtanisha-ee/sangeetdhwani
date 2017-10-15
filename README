@@ -1,19 +1,40 @@
 
 To generate index.html dynamically:
 
-# copy new images into images/ folder
-# download images from AWS s3://sangeeetdhwani.org/images 
-# the images are not in git
+# Already a new repo on saibaba in $HOME/git/sangeetdhwani
+# If not you can clone it
+# git clone git@github.com:jtanisha-ee/sangeetdhwani.git
+# cd sangeetdhwani
+# OR if there is a repo you can pull the latest
+# cd sangeetdhwani
+# git pull
+
+# In order to generate a new index.html that displays slideshow
+# you will need to download the images to your git folder
+# download current images from AWS s3://sangeeetdhwani.org/images 
+# copy new images into <sd-git-dir>/images/YYYYMMDD folder based on concert date
+# the images are not in git, as they are in gigabytes.
+# The AWS s3 is the master for the images. THere is also a local
+# copy of the folder on redbasin@saibaba.local under 
+# $HOME/git/sangeetdhwani/images. Hopefully this directory is uptodate.
+# When in doubt you can compare what's on S3 with this directory. They
+# should have the same number of files. Downloading images from S3 takes
+# quite a while. So you can hopefully use the images from this local
+# directory. Uploading images back to S3 also takes time.
+
 python genslideshow.py
 mv index.html index.html.prev
 mv genshow.html index.html
 
 # git bash commands
 git add index.html index.html.prev
-git add images/<imagexxx>.png     # etc....
-git commit -m "new images" .
+git -m "comment" .
+git push
 
+# Upload the index.html to s3 bucket and publish it
+# Upload the new concert folder YYYYMMDD to s3 and publish it
+# You will need to create folder YYYYMMDD and then upload photos inside it
 
+# Unrelated
 # to generate a public key from a private key
 ssh-keygen -y -f ~/.ssh/id_rsa > ~/.ssh/id_rsa.pub
-
