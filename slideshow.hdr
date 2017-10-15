@@ -67,6 +67,8 @@ img.icon {
 	color: #859CFE;
 }
 #main h2 {
+        position: relative;
+        margin: 1px 1px 50px 15px;
 	font: bold 1.25em "Arial Rounded MT Bold", Arial;
 }
 #main a {
@@ -97,6 +99,17 @@ img.icon {
 
 </script>
 
+<script>
+window.addEventListener('load', function(){
+    var allimages= document.getElementsByTagName('img');
+    for (var i=0; i<allimages.length; i++) {
+        if (allimages[i].getAttribute('data-src')) {
+            allimages[i].setAttribute('src', allimages[i].getAttribute('data-src'));
+        }
+    }
+}, false)
+</script>
+
 <script type="text/javascript">
 <!--
 
@@ -120,7 +133,7 @@ function showSlides() {
     slideIndex++;
     if (slideIndex > slides.length) {slideIndex = 1}
     slides[slideIndex-1].style.display = "block";
-    setTimeout(showSlides, 4000); // Change image every 2 seconds
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
 }
 
 -->
@@ -134,9 +147,20 @@ function showSlides() {
 .slideshow-container {
   max-width: 1000px;
   position: relative;
-  margin: 100px 1px 1px 15px;
+  margin: 9px 50px 1px 15px;
 }
   /* margin: auto; */
+
+/* fb like container */
+.fb-like {
+  position: relative;
+  margin: 1px 1px 1px 15px;
+}
+
+.fb-like-box {
+  position: relative;
+  margin: 15px 1px 1px 1px;
+}
 
 .mySlides {
     display: none;
@@ -210,6 +234,7 @@ function showSlides() {
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
+
 <img style="width:150px;height:113px" src="16.png" alt="Iris" name="iris" border="0" id="iris" />
 <div id="left">
 <a href="index.html"><img style="width:16px;height:16px" src="iris_icon.png" alt="icon" class="icon" /> Home</a>
@@ -229,8 +254,7 @@ function showSlides() {
 </div>
 <div id="main">
   <h2>Sangeet Dhwani's Music Community</h2>
-<div class="fb-like" data-href="http://www.sangeetdhwani.org/index.html" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
 
-<div class="fb-like-box" data-href="https://www.facebook.com/sangeetdhwani.org" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
+<div class="fb-like" data-href="http://www.sangeetdhwani.org/index.html" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
 
 <div class="slideshow-container">
