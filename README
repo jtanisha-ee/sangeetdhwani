@@ -12,3 +12,8 @@ mv genshow.html index.html
 git add index.html index.html.prev
 git add images/<imagexxx>.png     # etc....
 git commit -m "new images" .
+
+
+# to generate a public key from a private key
+ssh-keygen -y -f ~/.ssh/id_rsa > ~/.ssh/id_rsa.pub
+
