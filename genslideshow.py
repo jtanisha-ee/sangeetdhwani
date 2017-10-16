@@ -6,10 +6,6 @@ with open('slideshow.hdr', 'r') as hdr:
 with open('slideshow.ftr', 'r') as ftr:
     footer = ftr.read()
 
-"""
-<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="tanisha.jpg" />\n<img src="spinner.gif" data-src="realimage2.gif" />
-"""
-
 with open('genshow.html', 'w') as gen:
     gen.write(header + '\n')
 
